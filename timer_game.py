@@ -1,6 +1,3 @@
-"""
-Main game module that facilitates the game logic, and runs the game loop
-"""
 import json
 import math
 import os
@@ -157,7 +154,7 @@ def main():
     selected_y = None
     score = 0
     turns_left = 60000
-    GOAL_SCORE = 300
+    GOAL_SCORE = 200
     exit_game = False
     gameover_displayed = False
 
@@ -291,7 +288,7 @@ def main():
 
             a = pygame.time.get_ticks() + 5000
             while True:
-                if pygame.time.get_ticks() > a:
+                if pygame.time.get_ticks() > a or exit_game == True:
                     break
 
             exit_game = True

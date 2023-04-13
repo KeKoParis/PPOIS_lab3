@@ -1,6 +1,3 @@
-"""
-Main game module that facilitates the game logic, and runs the game loop
-"""
 import json
 import math
 import os
@@ -283,13 +280,12 @@ def main():
 
                 a = pygame.time.get_ticks() + 5000
                 while True:
-                    if pygame.time.get_ticks() > a:
+                    if pygame.time.get_ticks() > a or exit_game == True:
                         break
 
                 exit_game = True
 
 
-        # EXITS GAME LOOP
         for event in pygame.event.get():
             if event.type == pygame.QUIT:  # window exit button
                 exit_game = True
